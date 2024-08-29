@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class For {
     public static void main(String[] args){
         int N, i, x, sum = 0;
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
 
         N = sc.nextInt();
