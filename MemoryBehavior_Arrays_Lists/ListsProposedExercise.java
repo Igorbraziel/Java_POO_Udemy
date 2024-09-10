@@ -10,8 +10,10 @@ public class ListsProposedExercise {
     public static void main(String[] args){
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+
         List<Employee> employeesList = new ArrayList<>();
-        int N, id, employeeId, luckyEmployeeIndex;
+
+        int N, id, employeeId;
         String name;
         double salary, percentage;
 
@@ -46,11 +48,7 @@ public class ListsProposedExercise {
         if(luckyEmployee != null){
             System.out.print("Enter the percentage: ");
             percentage = sc.nextDouble();
-            luckyEmployeeIndex = employeesList.indexOf(luckyEmployee);
             luckyEmployee.increaseSalary(percentage);
-
-            employeesList.remove(luckyEmployeeIndex);
-            employeesList.add(luckyEmployeeIndex, luckyEmployee);
         } else {
             System.out.println("This id does not exists!");
         }
