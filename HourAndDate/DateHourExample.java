@@ -14,13 +14,15 @@ class DateHourExample {
 
         System.out.println("LocalDate = " + localDate);
         System.out.println("LocalDateTime = " + localDateTime);
-        System.out.println("Instant/GlobalDate = " + localDate);
+        System.out.println("Instant/GlobalDate = " + globalDate);
 
         LocalDateTime d01 = LocalDateTime.parse("2024-09-11T14:00:50");
 
-        
+        System.out.println("LocalDateTime/parse = " + d01);
 
-        System.out.println(d01);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        System.out.println(d01.format(formatter));
     }
 
 }
