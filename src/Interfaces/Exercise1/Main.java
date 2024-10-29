@@ -14,10 +14,10 @@ public class Main {
         System.out.print("Car model: ");
         String carModel = sc.nextLine();
 
-        System.out.print("Removal: (dd/MM/yyyy HH:mm) : ");
+        System.out.print("Removal: (dd/MM/yyyy HH:mm): ");
         LocalDateTime rentalStart = LocalDateTime.parse(sc.nextLine(), CarRental.dateFormatter);
 
-        System.out.print("Return: (dd/MM/yyyy HH:mm) : ");
+        System.out.print("Return: (dd/MM/yyyy HH:mm): ");
         LocalDateTime rentalFinish = LocalDateTime.parse(sc.nextLine(), CarRental.dateFormatter);
 
         System.out.print("Enter the hour price: ");
@@ -26,7 +26,7 @@ public class Main {
         System.out.print("Enter the day price: ");
         double dayPrice = sc.nextDouble();
 
-        RentalService rentalService = new RentalService(hourPrice, dayPrice);
+        RentalService rentalService = new RentalService(hourPrice, dayPrice, new BrazilTaxService());
 
         CarRental carRental = new CarRental(rentalStart, rentalFinish, new Vehicle(carModel));
 
